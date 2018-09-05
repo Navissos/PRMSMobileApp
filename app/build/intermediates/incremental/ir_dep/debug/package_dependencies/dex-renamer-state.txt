@@ -1,0 +1,4 @@
+#Wed Sep 05 14:32:22 MST 2018
+base.0=/Users/stefandragic/AndroidStudioProjects/BookingApp/app/build/intermediates/transforms/dexMerger/debug/29
+path.0=classes.dex
+renamed.0=classes.dex

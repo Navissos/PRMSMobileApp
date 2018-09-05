@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_checkbox_uncheck"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="2"
+        android:background="@android:drawable/alert_light_frame"
+        android:paddingLeft="25dp"
+            android:paddingRight="25dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_cropped" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"   >
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/my_reserv_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/alert_light_frame"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:text="@string/reserveBtn" >
+
+    </Button>
+
+    <Button
+        android:id="@+id/book_resource_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="90dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="25dp"
+        android:layout_weight="1"
+        android:background="@android:drawable/alert_light_frame"
+        android:paddingTop="10dp"
+        android:textSize="20sp"
+        android:clickable="true"
+        android:text="@string/bookBtn"  >
+
+    </Button>
+
+</LinearLayout>

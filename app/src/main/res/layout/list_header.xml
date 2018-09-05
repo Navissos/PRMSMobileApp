@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_view_header"
+    android:layout_height="60dp"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/gray"
+    android:gravity="start"
+    android:layout_gravity="start">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="2.5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="2.5dp"
+        android:layout_marginTop="2.5dp"
+        android:layout_weight="1"
+        android:text="Date"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:gravity="bottom"
+        android:textSize="20sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="2.5dp"
+        android:layout_marginLeft="2.5dp"
+        android:layout_marginRight="2.5dp"
+        android:layout_marginTop="2.5dp"
+        android:layout_weight="1"
+        android:text="Room"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:gravity="bottom"
+        android:textSize="20sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="2.5dp"
+        android:layout_marginLeft="2.5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="2.5dp"
+        android:layout_weight="1"
+        android:text="Time"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:gravity="bottom"
+        android:textSize="20sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+</LinearLayout>

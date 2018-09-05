@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Booking App</string>
+    <string name="reserveBtn">My Reservations</string>
+    <string name="bookBtn">Book Resource</string>
+</resources>
