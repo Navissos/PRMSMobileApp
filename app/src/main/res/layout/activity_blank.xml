@@ -3,45 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:drawable/alert_light_frame"
-    android:orientation="vertical"      >
+    android:background="@android:drawable/editbox_background"
+    android:orientation="vertical">
 
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/bookingCalendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:background="?attr/actionModeBackground"
         app:mcv_arrowColor="@color/orange"
         app:mcv_dateTextAppearance="@style/DateText"
         app:mcv_headerTextAppearance="@style/MonthText"
         app:mcv_selectionMode="multiple"
         app:mcv_titleAnimationOrientation="horizontal"
-        app:mcv_weekDayTextAppearance="@style/WeekdayText"  />
+        app:mcv_weekDayTextAppearance="@style/WeekdayText" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:paddingTop="20dp"
-        android:paddingBottom="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:weightSum="4"   >
+        android:orientation="horizontal"
+        android:paddingBottom="15dp"
+        android:paddingTop="20dp"
+        android:weightSum="4">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"
-            android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
-            android:orientation="vertical"  >
+            android:layout_marginRight="5dp"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
 
             <TextView
-                android:textAlignment="center"
-                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select Starting Time" />
+                android:text="Select Starting Time"
+                android:textAlignment="center"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/start_time_btn"
@@ -56,9 +57,9 @@
             android:id="@+id/submit_time_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="25dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
+            android:layout_marginTop="25dp"
             android:layout_weight="1"
             android:background="@android:drawable/editbox_dropdown_light_frame"
             android:text="Submit" />
@@ -66,24 +67,24 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.5"
-            android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1.5"
             android:orientation="vertical">
 
             <TextView
-                android:textAlignment="center"
-                android:textStyle="bold"
-                android:text="Enter Ending Time"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="Enter Ending Time"
+                android:textAlignment="center"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/end_time_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_checkbox_uncheck"
                 android:layout_marginLeft="5dp"
+                android:background="@drawable/background_checkbox_uncheck"
                 android:textSize="20sp" />
 
         </LinearLayout>

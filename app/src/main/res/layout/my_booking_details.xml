@@ -1,15 +1,16 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/above_shadow"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/myBookingDetails"
         android:layout_width="match_parent"
-        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/screen_background_light"
         android:paddingLeft="10dp"
         android:textColor="@color/green"
-        android:layout_height="wrap_content" />
+        android:textSize="20sp" />
 
 </LinearLayout>

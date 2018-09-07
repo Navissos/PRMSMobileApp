@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
+ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
 MERGED from [com.applandeo:material-calendar-view:1.4.0] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/material-calendar-view-1.4.0.aar/43aa2635e82a34054b47f1b110283928/AndroidManifest.xml:2:1-17:12
 MERGED from [com.github.prolificinteractive:material-calendarview:1.6.1] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/material-calendarview-1.6.1.aar/f79240b1905a8b865e5b28e9d095871f/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/7d324392a2ac9cc219d2a9a6e1094378/AndroidManifest.xml:17:1-22:12
@@ -24,25 +24,25 @@ MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/stefandragic/.gr
 MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/9c7e9ce9a658ce1c08469eefc7951d47/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/995ce856b01ccaddf88d1a3a9c3a99e3/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/d44c8bb06bafb299d085e61da6b368b2/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
+INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
+INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
 	package
 		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:3:5-50
 		INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
+		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
 		INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml
-		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-21:12
+		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:1-20:12
 		INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:5:5-19:19
+ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:5:5-18:19
 MERGED from [com.applandeo:material-calendar-view:1.4.0] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/material-calendar-view-1.4.0.aar/43aa2635e82a34054b47f1b110283928/AndroidManifest.xml:11:5-15:19
 MERGED from [com.applandeo:material-calendar-view:1.4.0] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/material-calendar-view-1.4.0.aar/43aa2635e82a34054b47f1b110283928/AndroidManifest.xml:11:5-15:19
 MERGED from [com.github.prolificinteractive:material-calendarview:1.6.1] /Users/stefandragic/.gradle/caches/transforms-1/files-1.1/material-calendarview-1.6.1.aar/f79240b1905a8b865e5b28e9d095871f/AndroidManifest.xml:11:5-20
@@ -68,19 +68,21 @@ MERGED from [com.android.support:recyclerview-v7:26.0.2] /Users/stefandragic/.gr
 	android:theme
 		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:11:9-40
 activity#com.example.stefandragic.bookingapp.MainActivity
-ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:12:9-18:20
+ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:12:9-17:20
+	android:windowSoftInputMode
+		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:12:48-89
 	android:name
 		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:12:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:13:13-17:29
+ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:13:13-16:29
 action#android.intent.action.MAIN
 ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:14:17-69
 	android:name
 		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:14:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:16:17-77
+ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:15:17-77
 	android:name
-		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:16:27-74
+		ADDED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml:15:27-74
 uses-sdk
 INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/stefandragic/AndroidStudioProjects/BookingApp/app/src/main/AndroidManifest.xml

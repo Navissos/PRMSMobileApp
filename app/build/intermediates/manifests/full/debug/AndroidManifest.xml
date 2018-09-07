@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.stefandragic.bookingapp.MainActivity" >
+        <activity
+            android:name="com.example.stefandragic.bookingapp.MainActivity"
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

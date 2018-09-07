@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_checkbox_uncheck"
+    android:background="@android:drawable/editbox_background"
     android:orientation="vertical"
     android:weightSum="5">
 
@@ -14,7 +14,7 @@
         android:layout_weight="2"
         android:background="@android:drawable/alert_light_frame"
         android:paddingLeft="25dp"
-            android:paddingRight="25dp">
+        android:paddingRight="25dp">
 
         <ImageView
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"   >
+        android:layout_weight="1">
 
     </LinearLayout>
 
@@ -41,11 +41,11 @@
         android:layout_marginTop="25dp"
         android:layout_weight="1"
         android:background="@android:drawable/alert_light_frame"
+        android:clickable="true"
         android:paddingBottom="5dp"
         android:paddingTop="5dp"
-        android:textSize="20sp"
-        android:clickable="true"
-        android:text="@string/reserveBtn" >
+        android:text="@string/reserveBtn"
+        android:textSize="20sp">
 
     </Button>
 
@@ -59,10 +59,10 @@
         android:layout_marginTop="25dp"
         android:layout_weight="1"
         android:background="@android:drawable/alert_light_frame"
-        android:paddingTop="10dp"
-        android:textSize="20sp"
         android:clickable="true"
-        android:text="@string/bookBtn"  >
+        android:paddingTop="10dp"
+        android:text="@string/bookBtn"
+        android:textSize="20sp">
 
     </Button>
 

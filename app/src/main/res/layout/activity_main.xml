@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<com.sothree.slidinguppanel.SlidingUpPanelLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:drawable/editbox_dropdown_light_frame"
     android:gravity="bottom"
-    tools:context=".MainActivity"
-    app:umanoPanelHeight="132dp"
-    app:umanoShadowHeight="5dp">
+    app:umanoOverlay="true"
+    app:umanoPanelHeight="126dp">
 
     <android.support.v4.view.ViewPager
         android:id="@+id/main_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="126dp"
+        android:background="?android:attr/actionModeSplitBackground"
+        android:paddingBottom="126dp">
 
     </android.support.v4.view.ViewPager>
 
@@ -23,15 +24,12 @@
         android:id="@+id/slideup"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="2.5dp"
-        android:layout_marginRight="2.5dp">
+        android:background="?android:attr/actionModeSplitBackground">
 
         <include
-            android:layout_marginLeft="2.5dp"
-            android:layout_marginRight="2.5dp"
-            android:layout_height="match_parent"
+            layout="@layout/sample"
             android:layout_width="match_parent"
-            layout="@layout/sample" />
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
 

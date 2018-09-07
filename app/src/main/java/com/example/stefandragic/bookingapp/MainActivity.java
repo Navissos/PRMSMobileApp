@@ -1,6 +1,5 @@
 package com.example.stefandragic.bookingapp;
 
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
@@ -43,7 +42,6 @@ import com.example.stefandragic.bookingapp.adapter.ListViewAdapter;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -65,14 +63,14 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     private ArrayList<ResourceDummy> resourceList;
     private ArrayList<ResourceDummy> queryList;
     private ArrayList<ReservationDummy> resrvList;
-    private HashMap<String, List<String>> myBookingDetails;
     private List<String> myBookingRooms;
-    List<CalendarDay> calList;
-
+    private List<CalendarDay> calList;
+    private HashMap<String, List<String>> myBookingDetails;
 
     private ListViewAdapter LVadapter;
     private RecyclerViewAdapter RVadapter1;
     private RecyclerViewAdapter RVadapter2;
+    private MaterialCalendarView bookingCal;
 
     private ReservationDummy unidum;
 
@@ -82,19 +80,16 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         setContentView(R.layout.activity_main);
         mLayout = findViewById(R.id.activity_main);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-            getSupportActionBar().setCustomView(R.layout.my_toolbar);
-        }
-
         initDummyData();
         initial();
         pager.setCurrentItem(5);
+        mLayout.setPanelState(PanelState.HIDDEN);
 
         Button bookRes_btn = vpAdapter.getView(1).findViewById(R.id.book_resource_btn);
         bookRes_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                unidum = new ReservationDummy();
                 pager.setCurrentItem(2);
             }
         });
@@ -115,8 +110,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             }
         });
 
-
-
         ImageButton stngBtn = findViewById(R.id.settingsBtn);
         stngBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,12 +127,14 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             @Override
             public void onClick(View view) {
                 pager.setCurrentItem(1);
+                mLayout.setPanelState(PanelState.COLLAPSED);
+                if (getSupportActionBar() != null) {
+                    getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+                    getSupportActionBar().setCustomView(R.layout.my_toolbar);
+                }
             }
         });
-
-        unidum = new ReservationDummy();
-
-    }
+        }
 
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
@@ -155,7 +150,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             View reservationView = myInflator.inflate(R.layout.activity_expandable, null);
             View landView = myInflator.inflate(R.layout.activity_landing_page, null);
             View bookView = myInflator.inflate(R.layout.activity_blank, null);
-            findViewById(R.id.toolbar_layout).setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
             View loginView = myInflator.inflate(R.layout.login, null);
             View settingView = myInflator.inflate(R.layout.settings, null);
             RecyclerView resTypeView = (RecyclerView) myInflator.inflate(R.layout.recycler_view_element, pager, false).findViewById(R.id.recyclerView);
@@ -213,32 +207,23 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                     int day = cal.get(Calendar.DAY_OF_MONTH);
                     int month = cal.get(Calendar.MONTH)+1;
                     int year = cal.get(Calendar.YEAR);
-                    resrvList.clear();  roomList.clear();   timeList.clear();
+                    dateList.clear();   roomList.clear();   timeList.clear();
+                    LVadapter.notifyDataSetChanged();
 
                     for(ReservationDummy rd : resrvList){
-                        if ( rd.getStartDate().getYear()==year &&
-                                rd.getStartDate().getMonth()+1==month &&
-                                    rd.getStartDate().getDay()==day){
-                                        dateList.add(month+"-"+month+"-"+year+"-");
-                                        roomList.add(rd.getResRoom().getRoomType()+" "+rd.getResRoom().getRoomNumber());
-//                                        timeList.add(rd.get())
-                                        LVadapter.notifyDataSetChanged();
+                        for(CalendarDay select : rd.getDates()){
+                            if(select.getYear() == year && select.getMonth()+1 == month && select.getDay() == day) {
+                                dateList.add(select.getMonth() + "-" + select.getDay() + "-" + select.getYear());
+                                roomList.add(rd.getResRoom().getRoomType() + " " + rd.getResRoom().getRoomNumber());
+                                timeList.add(rd.getStartTime() + " - " + rd.getEndTime());
+                                LVadapter.notifyDataSetChanged();
+                                }
+                            }
                         }
                     }
-                }
             });
 
-
-
-            MaterialCalendarView bookingCal = vpAdapter.getView(4).findViewById(R.id.bookingCalendar);
-            Button startTime = (Button) vpAdapter.getView(4).findViewById(R.id.start_time_btn);
-            final Button endTime = (Button) vpAdapter.getView(4).findViewById(R.id.end_time_btn);
-            calList = bookingCal.getSelectedDates();
-
-            //        bookingCal.getSelectedDates();
-//        List<Calendar> selectedDates = calendarView.getSelectedDates();
-//        Calendar selectedDate = calendarView.getFirstSelectedDate();
-
+            bookingCal = vpAdapter.getView(4).findViewById(R.id.bookingCalendar);
             strTimeBtn = vpAdapter.getView(4).findViewById(R.id.start_time_btn);
             strTimeBtn.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.M)
@@ -246,7 +231,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             public void onClick(View view) {
                 setTime(vpAdapter.getView(4), 0);
             }
-        });
+            });
 
             endTimeBtn = vpAdapter.getView(4).findViewById(R.id.end_time_btn);
             endTimeBtn.setOnClickListener(new View.OnClickListener() {
@@ -266,8 +251,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                     }else if((endTimeBtn.getText().toString().isEmpty())){
                         Toast.makeText(MainActivity.this, ""+strTimeBtn.getText().toString(), Toast.LENGTH_SHORT).show();
                     }else{
-                        unidum.setStartDate(calList.get(0));
-                        unidum.setEndDate(calList.get(calList.size()-1));
+                        calList = (bookingCal.getSelectedDates());
                         confirmBooking();
                     }
             }});
@@ -292,11 +276,13 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         roomName.setText("Room: "+unidum.getResRoom().getRoomType()+" "+unidum.getResRoom().getRoomNumber());
         startTime.setText("Start Time:  "+strTimeBtn.getText());
         endTime.setText("End time:  "+endTimeBtn.getText());
-        startDate.setText("Start date:  "+unidum.getStartDate().getMonth()+
-                "/"+unidum.getStartDate().getDay()+"/"+unidum.getStartDate().getYear());
-        endDate.setText("Start date:  "+unidum.getEndDate().getMonth()+
-                "/"+unidum.getEndDate().getDay()+"/"+unidum.getEndDate().getYear());
 
+        startDate.setText("Start date:  "+ calList.get(0).getMonth() +
+                "/"+calList.get(0).getDay() +
+                "/"+calList.get(0).getYear());
+        endDate.setText("End date:  "+ calList.get(calList.size()-1).getMonth() +
+                "/"+calList.get(calList.size()-1).getDay() +
+                "/"+calList.get(calList.size()-1).getYear());
 
         final Button cancelRoom = (Button) picker.findViewById(R.id.cancel_cnf_btn);
         final Button confirmRoom = (Button) picker.findViewById(R.id.confirm_cnf_btn);
@@ -312,27 +298,41 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             @Override
             public void onClick(View view) {
                 dialog.cancel();
-                unidum.setStartDate(calList.get(0));
-                unidum.setEndDate(calList.get(calList.size()-1));
-                resrvList.add(unidum);
+                resrvList.add(new ReservationDummy(calList, unidum.getResRoom(), unidum.getStartTime(), unidum.getEndTime()));
                 Toast.makeText(MainActivity.this, "Reservation created!", Toast.LENGTH_SHORT).show();
                 pager.setCurrentItem(0);
             }
         });
-
     }
 
     public void filterDialog(){
-            AlertDialog.Builder dialogBuilder = new TimePickerDialog.Builder(this);
-            LayoutInflater inflater = this.getLayoutInflater();
-            final View picker = inflater.inflate(R.layout.filterpicker, null);
-            dialogBuilder.setView(picker);
-            final AlertDialog dialog = dialogBuilder.create();
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
 
-            dialog.show();
-        }
+        AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+//w        final View picker = inflater.inflate(R.layout.filterpicker, null);
+//        dialogBuilder.setView(picker);
+        String[] types = {"Scrum", "Conference", "Breakroom", "Boardroom", "Recreation"};
+        dialogBuilder.setItems(types, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                switch(i){
+                    case 0:
+                        Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 1:
+                        Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+
+                }
+            }
+        });
+//        final AlertDialog dialog = dialogBuilder.create();
+//        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+        dialogBuilder.show();
+    }
 
         @Override
         public void onBackPressed() {
@@ -418,14 +418,19 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 public void onClick(View view) {
                     final int hour =  timePicker.getHour();
                     final int min = timePicker.getMinute();
-                    if (extraInfo==0)
-                        strTimeBtn.setText(updateTime(hour, min));
-                    if (extraInfo==1)
-                        endTimeBtn.setText(updateTime(hour, min));
+                    if (extraInfo==0) {
+                        String time = updateTime(hour, min);
+                        unidum.setStartTime(time);
+                        strTimeBtn.setText(time);
+                    }
+                    if (extraInfo==1) {
+                        String time = updateTime(hour, min);
+                        unidum.setEndTime(time);
+                        endTimeBtn.setText(time);
+                    }
                     dialog.cancel();
                 }
             });
-
             dialog.show();
         }
 
@@ -443,19 +448,17 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         else
             timeSet = "AM";
 
-
         String minutes = "";
         if (mins < 10)
             minutes = "0" + mins;
         else
             minutes = String.valueOf(mins);
 
-        // Append in a StringBuilder
         String aTime = new StringBuilder().append(hours).append(':')
                 .append(minutes).append(" ").append(timeSet).toString();
 
         return aTime;
-    }
+        }
 
         public void initDummyData(){
 
@@ -467,8 +470,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             menuList = new ArrayList<ResourceDummy>();
             resourceList = new ArrayList<ResourceDummy>();
             queryList = new ArrayList<ResourceDummy>();
-
-//            resrvList.add();
 
             menuList.add(new ResourceDummy("Scrum",0));
             menuList.add(new ResourceDummy("Conference",0));

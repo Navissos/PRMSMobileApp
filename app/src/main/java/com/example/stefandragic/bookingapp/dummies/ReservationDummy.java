@@ -8,42 +8,54 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class ReservationDummy {
 
-    private CalendarDay startDate;
-    private CalendarDay endDate;
-
+    private List<CalendarDay> resDates;
     private ResourceDummy resRoom;
+    private String startTime;
+    private String endTime;
 
-    public ReservationDummy (CalendarDay startDate, CalendarDay endDate, ResourceDummy resRoom){
+    public ReservationDummy (List<CalendarDay> resDates, ResourceDummy resRoom, String startTime, String endTime){
 
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.resDates = resDates;
         this.resRoom = resRoom;
+        this.startTime = startTime;
+        this.endTime = endTime;
+
     }
 
     public ReservationDummy() {
-        startDate = null;
-        endDate = null;
+        resDates = null;
         resRoom = null;
+        startTime = null;
+        endTime = null;
 
     }
 
-    public CalendarDay getStartDate() {
-        return startDate;
+    public String getStartTime() {
+        return startTime;
     }
 
-    public void setStartDate(CalendarDay startDate) {
-        this.startDate = startDate;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
-    public CalendarDay getEndDate() {
-        return endDate;
+    public String getEndTime() {
+        return endTime;
     }
 
-    public void setEndDate(CalendarDay endDate) {
-        this.endDate = endDate;
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public List<CalendarDay> getDates() {
+        return resDates;
+    }
+
+    public void setDates(List<CalendarDay> resDates) {
+        this.resDates = resDates;
     }
 
     public ResourceDummy getResRoom() {
